@@ -59,12 +59,11 @@ export const NewNote = ({ selectedNote }) => {
   };
 
   return (
-    <div className="form-container">
+    <div className="new-note-container">
       <Button
         text={ <IoIosArrowBack /> }
         method={ handleBack }
         isRounded
-        className="back-icon"
       />
       <form noValidate autoComplete="off">
         {/* title */}

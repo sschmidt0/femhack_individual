@@ -1,5 +1,10 @@
 @import './Variables.scss';
 
+.new-note-container {
+  width: 100%;
+  max-width: 600px;
+}
+
 .tag-input-box {
   display: flex;
   align-items: center;
@@ -13,8 +18,4 @@
 
 .tag-info {
   margin-top: 30px;
-}
-
-.back-icon {
-  background-color: $background-color !important;
 }
