@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/NewNote.scss';
+import { v4 as uuidv4 } from 'uuid';
 import { validateInput } from '../assets/validateNoteInput';
 import { Button } from '../components/Button';
 import { NoteContext } from '../components/NoteContext';
@@ -11,12 +11,14 @@ export const NewNote = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [tags, setTags] = useState('');
+  const id = uuidv4();
   const [errors, setErrors] = useState({});
 
   const handleClick = (e) => {
     e.preventDefault();
 
     const data = {
+      id,
       title,
       description,
       tags

@@ -1,0 +1,27 @@
+@import './Variables.scss';
+
+.note-box {
+  margin-bottom: 5px;
+  padding: 5px 20px;
+  color: $secundary-text-color;
+  background-color: $text-color;
+  border-radius: 10px;
+
+  .note-box-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 5px;
+    align-self: flex-end;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    text-transform: capitalize;
+  }
+}
