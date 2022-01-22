@@ -8,12 +8,13 @@ This project is created to participate in the International Femhack organized by
 - Add tags to the notes
 - Delete notes
 - Edit notes
+ 
 
-<img width="973" alt="Captura de Pantalla 2022-01-22 a les 18 27 25" src="https://user-images.githubusercontent.com/47662713/150649201-17ac382d-01a3-46eb-9c30-646cceac6529.png">
+<img width="1060" alt="Captura de Pantalla 2022-01-22 a les 22 01 58" src="https://user-images.githubusercontent.com/47662713/150655400-7cc9ae61-2eb1-46f4-8eb2-6d0fbe663c30.png">
 
-<img width="976" alt="Captura de Pantalla 2022-01-22 a les 18 29 14" src="https://user-images.githubusercontent.com/47662713/150649206-98ec9693-3c41-4447-8dc2-a7cc7cd11163.png">
+<img width="1060" alt="Captura de Pantalla 2022-01-22 a les 22 00 17" src="https://user-images.githubusercontent.com/47662713/150655407-1dd777c5-5fe6-46a3-9edc-cca96c016d4d.png">
 
-<img width="971" alt="Captura de Pantalla 2022-01-22 a les 18 30 04" src="https://user-images.githubusercontent.com/47662713/150649207-02458038-50f4-4d5a-acdd-bad6d40cc375.png">
+<img width="1064" alt="Captura de Pantalla 2022-01-22 a les 22 01 35" src="https://user-images.githubusercontent.com/47662713/150655414-060efc06-4c1a-474e-a5c1-2c4797f44163.png">
 
 
 You can try the to-do app at [https://femhack-to-do-list.netlify.app/](https://femhack-to-do-list.netlify.app/).
