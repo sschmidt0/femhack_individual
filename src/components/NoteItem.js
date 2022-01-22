@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { NoteContext } from '../components/NoteContext';
 import { Button } from './Button';
 import { MdEdit, MdDelete } from 'react-icons/md';
@@ -35,4 +36,9 @@ export const NoteItem = ({ note, setSelectedNote }) => {
       </div>
     </li>
   );
+};
+
+NoteItem.propTypes = {
+  note: PropTypes.object,
+  selectedNote: PropTypes.object,
 };

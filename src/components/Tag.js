@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Button } from './Button';
 import '../styles/Tag.scss';
 
@@ -15,4 +16,11 @@ export const Tag = ({ item, tags, setTags, isEditable }) => {
       { isEditable && <Button text="x" method={ handleDelete } isRounded /> }
     </li>
   );
+};
+
+Tag.propTypes = {
+  item: PropTypes.object,
+  tags: PropTypes.array,
+  setTags: PropTypes.func,
+  isEditable: PropTypes.bool
 };

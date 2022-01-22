@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { validateInput } from '../assets/validateNoteInput';
 import { Button } from '../components/Button';
@@ -114,3 +115,6 @@ export const NewNote = ({ selectedNote }) => {
   )
 };
 
+NewNote.propTypes = {
+  selectedNote: PropTypes.object,
+};

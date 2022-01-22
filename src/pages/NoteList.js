@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { Button } from '../components/Button';
 import { NoteContext } from '../components/NoteContext';
@@ -13,8 +14,6 @@ export const NoteList = ({ setSelectedNote }) => {
   const handleClick = () => {
     navigate('/../new-note');
   };
-
-  console.log(notes);
 
   return (
     <div className="list-box">
@@ -36,4 +35,8 @@ export const NoteList = ({ setSelectedNote }) => {
       { notes.length === 0 && <p className="alternative-text">Vaya, no tienes notas :-(</p> }
     </div>
   )
+};
+
+NoteList.propTypes = {
+  selectedNote: PropTypes.object,
 };

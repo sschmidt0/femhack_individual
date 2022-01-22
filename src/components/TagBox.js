@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Tag } from './Tag';
 import '../styles/TagBox.scss';
 
@@ -14,3 +15,9 @@ export const TagBox = ({ tags, setTags, isEditable }) => (
     }
   </ul>
 );
+
+TagBox.propTypes = {
+  tags: PropTypes.array,
+  setTags: PropTypes.func,
+  isEditable: PropTypes.bool
+};
