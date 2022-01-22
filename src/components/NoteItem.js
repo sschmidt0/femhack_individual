@@ -1,15 +1,18 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { NoteContext } from '../components/NoteContext';
 import { Button } from './Button';
 import { MdEdit, MdDelete } from 'react-icons/md';
 import { TagBox } from './TagBox';
 import '../styles/NoteItem.scss';
 
-export const NoteItem = ({ note }) => {
+export const NoteItem = ({ note, setSelectedNote }) => {
+  const navigate = useNavigate();
   const { notes, setNotes } = useContext(NoteContext);
 
   const handleEdit = () => {
-    console.log('editing');
+    navigate('/../edit-note');
+    setSelectedNote(note);
   };
 
   const handleDelete = () => {

@@ -6,7 +6,7 @@ import { NoteContext } from '../components/NoteContext';
 import { NoteItem } from '../components/NoteItem';
 import '../styles/NoteList.scss';
 
-export const NoteList = () => {
+export const NoteList = ({ setSelectedNote }) => {
   const navigate = useNavigate();
   const { notes } = useContext(NoteContext);
 
@@ -25,7 +25,11 @@ export const NoteList = () => {
       { notes.length > 0 &&
         <ul className="note-list">
           {
-            notes.map(note => <NoteItem note={ note } key={ uuidv4() } />)
+            notes.map(note => <NoteItem
+              note={ note }
+              key={ uuidv4() }
+              setSelectedNote={ setSelectedNote }
+            />)
           }
         </ul>
       }

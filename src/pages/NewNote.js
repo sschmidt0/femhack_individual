@@ -8,15 +8,15 @@ import { TagBox } from '../components/TagBox';
 import { IoIosArrowBack } from 'react-icons/io';
 import '../styles/NewNote.scss';
 
-export const NewNote = () => {
+export const NewNote = ({ selectedNote }) => {
   const navigate = useNavigate();
   const { notes, setNotes } = useContext(NoteContext);
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const [title, setTitle] = useState(selectedNote !== undefined ? selectedNote.title : '');
+  const [description, setDescription] = useState(selectedNote !== undefined ? selectedNote.description : '');
   const [tagInput, setTagInput] = useState({ text: '', id: '' });
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState(selectedNote !== undefined ? selectedNote.tags : []);
   const tagsInfoText = tags.length === 1 ? 'tag' : 'tags';
-  const id = uuidv4();
+  const id = selectedNote !== undefined ? selectedNote.id : uuidv4();
   const [errors, setErrors] = useState({});
 
   const handleBack = () => {
@@ -43,8 +43,15 @@ export const NewNote = () => {
     const errorChecking = validateInput(data);
     if (!errorChecking.isValid) setErrors(errorChecking.errors);
     if (errorChecking.isValid) {
-      // save note in context store
-      setNotes([...notes, data]);
+      if (selectedNote === undefined) {
+        // save note in context store if new note
+        setNotes([...notes, data]);
+      } else {
+        // if note is edited, we have to find position of edited note in notes array and replace it
+        const index = notes.findIndex(note => note.id === id);
+        setNotes([...notes.slice(0, index), data, ...notes.slice(index+1)]);
+      }
+
       // redirect to note-list
       navigate('/../note-list');
     }
