@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# International Femhack - Front End challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is created to participate in the International Femhack organized by Nuwe. It consists of implementing a to-do list:
 
-## Available Scripts
+- Login and register (no persistence required)
+- New note with: title, description
+- Visualize the notes in a grid/list view
+- Add tags to the notes
+- Delete notes
+- Edit notes
 
-In the project directory, you can run:
+<img width="973" alt="Captura de Pantalla 2022-01-22 a les 18 27 25" src="https://user-images.githubusercontent.com/47662713/150649201-17ac382d-01a3-46eb-9c30-646cceac6529.png">
 
-### `npm start`
+<img width="976" alt="Captura de Pantalla 2022-01-22 a les 18 29 14" src="https://user-images.githubusercontent.com/47662713/150649206-98ec9693-3c41-4447-8dc2-a7cc7cd11163.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img width="971" alt="Captura de Pantalla 2022-01-22 a les 18 30 04" src="https://user-images.githubusercontent.com/47662713/150649207-02458038-50f4-4d5a-acdd-bad6d40cc375.png">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+You can try the to-do app at [https://femhack-to-do-list.netlify.app/](https://femhack-to-do-list.netlify.app/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnology used ℹ️
 
-### `npm run build`
+This project is created with React, a JavaScript library to build fast and robust applications. Its basic or common elements are styled with Sass. For validation, the packages is-empty and Validator are used to validate if the input is empty or if it corresponds to certain patterns, like an valide email address. Therefore, RegEx are used in validation. Lastly, the package react-icons is used for the icons in this project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Prerequisites 📋
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In order to be able to install the project you need to have the following installed:
 
-### `npm run eject`
+```
+Node.js
+npm
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation 🔧
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To install the project you need to follow the following steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. On GitHub.com, navigate to the main page of the repository.
+2. Above the list of files, click ⬇️ Code.
+3. Copy the HTTPS URL.
+4. Open your terminal.
+5. Type `git clone`, and then paste the URL you copied earlier.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+$ git clone https://github.com/sschmidt0/femhack_individual.git
+```
 
-## Learn More
+6. Press Enter to create your local clone.
+7. `cd` into the created folder which contains the project.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+$ cd femhack_individual
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+8. Install the dependencies with `npm intall` to be able to start the project.
 
-### Code Splitting
+```
+$ npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+9. Start the project with `npm start`.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+$ npm start
+```
