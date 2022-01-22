@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
-import '../styles/RegisterLoginPage.scss';
-import { validateInput } from '../assets/validateInput';
+import { validateInput } from '../assets/validateRegisterLoginInput';
 import { Button } from '../components/Button';
+import '../styles/RegisterLoginPage.scss';
+import '../styles/Form.scss';
 
 export const RegisterLoginPage = () => {
   const location = useLocation();
@@ -37,33 +38,31 @@ export const RegisterLoginPage = () => {
   };
 
   return (
-    <div className="container">
-      <div className="form-container">
-        <form noValidate autoComplete="off">
-          {/* username */}
-          <label html="username">Nombre de usuario</label>
-          <input
-            id="username"
-            name="username"
-            autoFocus
-            value={ userName }
-            onChange={(e) => setUserName(e.target.value)}
-          />
-          <span>{ errors.userName }</span>
-          {/* email */}
-          <label html="email">Correo electrónico</label>
-          <input
-            id="email"
-            name="email"
-            inputMode='email'
-            value={ email }
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <span>{ errors.email }</span>
-          <Button text={ buttonText } method={ handleClick } />
-        </form>
-        <p>{ preText } <Link to={ linkDestination }>{ linkText }</Link></p>
-      </div>
+    <div className="form-container">
+      <form noValidate autoComplete="off">
+        {/* username */}
+        <label html="username">Nombre de usuario</label>
+        <input
+          id="username"
+          name="username"
+          autoFocus
+          value={ userName }
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <span>{ errors.userName }</span>
+        {/* email */}
+        <label html="email">Correo electrónico</label>
+        <input
+          id="email"
+          name="email"
+          inputMode='email'
+          value={ email }
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <span>{ errors.email }</span>
+        <Button text={ buttonText } method={ handleClick } />
+      </form>
+      <p>{ preText } <Link to={ linkDestination }>{ linkText }</Link></p>
     </div>
   )
 };
