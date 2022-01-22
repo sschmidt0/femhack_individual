@@ -1,0 +1,26 @@
+@import './Variables.scss';
+
+.tag-span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: 20px;
+  padding: 5px 10px;
+  color: $text-color;
+  background-color: $button-color;
+  border-radius: 20px;
+
+  span {
+    margin-bottom: 12px;
+    color: $text-color;
+  }
+
+  button {
+    width: 5px;
+    height: 5px;
+    margin-bottom: 4px;
+    font-weight: 300;
+  }
+}

@@ -22,13 +22,14 @@ export const NoteList = () => {
         <h1>Tus notas</h1>
         <Button text="+" method={ handleClick } isRounded />
       </div>
-      <ul className="note-list">
-        {
-          notes.map(note => <li key={ uuidv4() }>
-            <NoteItem note={ note } />
-          </li>)
-        }
-      </ul>
+      { notes.length > 0 &&
+        <ul className="note-list">
+          {
+            notes.map(note => <NoteItem note={ note } key={ uuidv4() } />)
+          }
+        </ul>
+      }
+      { notes.length === 0 && <p className="alternative-text">Vaya, no tienes notas :-(</p> }
     </div>
   )
 };

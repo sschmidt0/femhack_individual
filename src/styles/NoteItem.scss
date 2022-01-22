@@ -7,6 +7,14 @@
   background-color: $text-color;
   border-radius: 10px;
 
+  .note-box-head {
+    margin-top: 10px;
+
+    span {
+      font-size: 12px;
+    }
+  }
+
   .note-box-row {
     display: flex;
     justify-content: space-between;

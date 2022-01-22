@@ -1,0 +1,20 @@
+@import './Variables.scss';
+
+.tag-input-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  button {
+    width: 50px;
+  }
+
+}
+
+.tag-info {
+  margin-top: 30px;
+}
+
+.back-icon {
+  background-color: $background-color !important;
+}

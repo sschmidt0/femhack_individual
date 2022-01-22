@@ -4,15 +4,30 @@ import { v4 as uuidv4 } from 'uuid';
 import { validateInput } from '../assets/validateNoteInput';
 import { Button } from '../components/Button';
 import { NoteContext } from '../components/NoteContext';
+import { TagBox } from '../components/TagBox';
+import { IoIosArrowBack } from 'react-icons/io';
+import '../styles/NewNote.scss';
 
 export const NewNote = () => {
   const navigate = useNavigate();
   const { notes, setNotes } = useContext(NoteContext);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [tags, setTags] = useState('');
+  const [tagInput, setTagInput] = useState({ text: '', id: '' });
+  const [tags, setTags] = useState([]);
+  const tagsInfoText = tags.length === 1 ? 'tag' : 'tags';
   const id = uuidv4();
   const [errors, setErrors] = useState({});
+
+  const handleBack = () => {
+    navigate(-1);
+  };
+
+  const handleAdd = (e) => {
+    e.preventDefault();
+    setTags([...tags, tagInput]);
+    setTagInput({ text: '', id: '' });
+  };
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -37,6 +52,12 @@ export const NewNote = () => {
 
   return (
     <div className="form-container">
+      <Button
+        text={ <IoIosArrowBack /> }
+        method={ handleBack }
+        isRounded
+        className="back-icon"
+      />
       <form noValidate autoComplete="off">
         {/* title */}
         <label html="title">Título</label>
@@ -48,6 +69,7 @@ export const NewNote = () => {
           onChange={(e) => setTitle(e.target.value)}
         />
         <span>{ errors.title }</span>
+
         {/* description */}
         <label html="description">Descripción</label>
         <textarea
@@ -55,15 +77,30 @@ export const NewNote = () => {
           onChange={(e) => setDescription(e.target.value)}
         />
         <span>{ errors.description }</span>
-        {/* tags */}
-        <label html="tags">Tags</label>
-        <input
-          id="tags"
-          name="tags"
-          autoFocus
-          value={ tags }
-          onChange={(e) => setTags(e.target.value)}
+
+        {/* tags added */}
+        <p className="tag-info">{ tags.length } { tagsInfoText } added</p>
+        <TagBox
+          tags={ tags }
+          setTags={ setTags }
+          isEditable
         />
+
+        {/* tags */}
+        <label html="tags">Tag</label>
+        <div className="tag-input-box">
+          <input
+            id="tags"
+            name="tags"
+            autoFocus
+            value={ tagInput.text }
+            onChange={(e) => setTagInput({
+              text: e.target.value,
+              id: uuidv4()
+            })}
+          />
+          <Button text="+" method={ handleAdd } isRounded />
+        </div>
         <Button text="Guardar nota" method={ handleClick } />
       </form>
     </div>

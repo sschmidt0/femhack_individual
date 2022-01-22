@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { NoteContext } from '../components/NoteContext';
 import { Button } from './Button';
 import { MdEdit, MdDelete } from 'react-icons/md';
+import { TagBox } from './TagBox';
 import '../styles/NoteItem.scss';
 
 export const NoteItem = ({ note }) => {
@@ -17,12 +18,10 @@ export const NoteItem = ({ note }) => {
   };
 
   return (
-    <div className="note-box">
-      <div className="note-box-row">
+    <li className="note-box">
+      <div className="note-box-head">
+        <TagBox tags={ note.tags } />
         <h3>{ note.title }</h3>
-        <div className="tags">
-          <p>tags</p>
-        </div>
       </div>
       <div className="note-box-row">
         <p>{ note.description }</p>
@@ -31,6 +30,6 @@ export const NoteItem = ({ note }) => {
           <Button text={ <MdDelete /> } method={ handleDelete } isRounded />
         </div>
       </div>
-    </div>
+    </li>
   );
 };
