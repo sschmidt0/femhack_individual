@@ -10,6 +10,10 @@ export const RegisterLoginPage = () => {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [errors, setErrors] = useState({});
+
+  // dynamically change texts and destinations according to the route
+  // "/" --> register page
+  //"/iniciar" --> login page
   const buttonText = location.pathname !== '/iniciar' ? 'Regístrate' : 'Inicia la sesión';
   const preText = location.pathname === '/iniciar' ? '¿No tienes cuenta?' : '¿Ya tienes cuenta?';
   const linkDestination = location.pathname === '/iniciar' ? '/' : '/iniciar';
@@ -23,10 +27,11 @@ export const RegisterLoginPage = () => {
       email
     };
 
+    // input validation
     const errorChecking = validateInput(data);
     if (!errorChecking.isValid) setErrors(errorChecking.errors);
     if (errorChecking.isValid) {
-      console.log('Login sucessful');
+      // redirect to note-list according to active route
       location.pathname === 'iniciar' ? navigate('/../note-list') : navigate('/note-list');
     }
   };
